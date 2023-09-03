@@ -1,13 +1,13 @@
 .app-clock-section {
-  padding-top: 32px;
-  padding-bottom: 40px;
+ margin-top: 32px;
+  margin-bottom: 40px;
   @include tablet {
-    padding-top: 80px;
-    padding-bottom: 64px;
+    margin-top: 80px;
+    margin-bottom: 64px;
   }
   @include desktop {
-    padding-top: 56px;
-    padding-bottom: 98px;
+    margin-top: 56px;
+    margin-bottom: 98px;
   }
 }
 
@@ -18,9 +18,14 @@
 .app-clock-section-quote-container-text {
   margin-right: 17px;
   max-width: 290px;
+  margin-bottom: 227px;
   @include tablet {
     margin-right: 16px;
     max-width: 540px;
+    margin-bottom: 388px;
+  }
+  @include desktop {
+    margin-bottom: 233px;
   }
 }
 
@@ -51,4 +56,56 @@
   @include tablet {
     margin-top: 13px;
   }
+}
+
+.app-clock-section-clock-time-of-day-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+  @include desktop{
+    margin-bottom: 16px;
+  }
+}
+
+.app-clock-section-clock-time-of-day {
+  color: $white;
+  margin-left: 16px;
+ 
+}
+
+.app-clock-section-clock-time-of-day-currently {
+  color: $white;
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+.app-clock-section-time-container{
+  display: flex;
+}
+
+.app-clock-section-time-symbol{
+  color:white;
+
+}
+
+.app-clock-section-time{
+  color: $white;
+}
+
+.app-clock-section-time-zone{
+  color: $white;
+  display: flex;
+align-items: end;
+padding-bottom: 5px;
+margin-left: 5px;
+@include tablet {
+  padding-bottom: 25px;
+  margin-left: 11px;
+}
+
 }

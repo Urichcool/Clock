@@ -1,5 +1,6 @@
 import React from "react";
 import RefreshIcon from "../../images/icons/RefreshIcon";
+import SunIcon from "../../images/icons/SunIcon";
 
 const AppClockSection = () => {
   return (
@@ -18,6 +19,21 @@ const AppClockSection = () => {
         <button className="app-clock-section-quote-button">
           <RefreshIcon />
         </button>
+      </div>
+      <div className="app-clock-section-clock-container">
+        <div className="app-clock-section-clock-time-of-day-container">
+          <SunIcon />
+          <h4 className="heading-h4 app-clock-section-clock-time-of-day">
+            good morning
+          </h4>
+          <h4 className="heading-h4 app-clock-section-clock-time-of-day-currently">
+            , it's currently
+          </h4>
+        </div>
+        <div className="app-clock-section-time-container">
+          <h1 className="heading-h1 app-clock-section-time">11:37</h1>
+          <p className="body-time-zone app-clock-section-time-zone">bst</p>
+        </div>
       </div>
     </section>
   );
