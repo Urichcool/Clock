@@ -1,0 +1,54 @@
+.app-clock-section {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  @include tablet {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+  @include desktop {
+    padding-top: 56px;
+    padding-bottom: 98px;
+  }
+}
+
+.app-clock-section-quote-container {
+  display: flex;
+}
+
+.app-clock-section-quote-container-text {
+  margin-right: 17px;
+  max-width: 290px;
+  @include tablet {
+    margin-right: 16px;
+    max-width: 540px;
+  }
+}
+
+.app-clock-section-quote-button {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 500ms;
+  transition-property: transform;
+  &:hover {
+    transform: rotate(3.142rad);
+  }
+}
+
+.app-clock-section-quote {
+  color: $white;
+}
+
+.app-clock-section-quote-author {
+  margin-top: 8px;
+  color: $white;
+  font-weight: 700;
+  @include tablet {
+    margin-top: 13px;
+  }
+}

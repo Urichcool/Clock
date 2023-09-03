@@ -1,9 +1,14 @@
 import React from 'react';
+import AppClockSection from './App-clock-section/AppClockSection';
+import AppBackground from './App-background/AppBackground';
 
 function App() {
   return (
     <div className="App">
-      <div></div>
+      <AppBackground/>
+      <div className='container'>
+        <AppClockSection/>
+      </div>
     </div>
   );
 }
