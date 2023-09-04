@@ -10,7 +10,7 @@
     line-height: 175px;
   }
   @include desktop {
-    font-size: 200px;
+    font-size: 192px;
     line-height: 200px;
   }
 }
@@ -25,12 +25,20 @@
 
 .heading-h3 {
   font-family: Inter;
-  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
-  letter-spacing: 4.8px;
   text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 3px;
+  @include tablet {
+    font-size: 18px;
+    letter-spacing: 3.6px;
+  }
+  @include desktop {
+    font-size: 24px;
+    letter-spacing: 4.8px;
+  }
 }
 
 .heading-h4 {
@@ -70,19 +78,19 @@
   text-transform: uppercase;
 }
 
-.body-time-zone{
+.body-time-zone {
   font-family: Inter;
-font-size: 15px;
-font-style: normal;
-font-weight: 300;
-line-height: 28px;
-text-transform: uppercase;
-@include tablet{
-  font-size: 32px;
-}
-@include desktop{
-  font-size: 40px;
-}
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  text-transform: uppercase;
+  @include tablet {
+    font-size: 32px;
+  }
+  @include desktop {
+    font-size: 40px;
+  }
 }
 
 .body-text {

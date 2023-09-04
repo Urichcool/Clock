@@ -1,13 +1,13 @@
 .app-clock-section {
- margin-top: 32px;
-  margin-bottom: 40px;
+  padding-top: 32px;
+  padding-bottom: 40px;
   @include tablet {
-    margin-top: 80px;
-    margin-bottom: 64px;
+    padding-top: 80px;
+    padding-bottom: 64px;
   }
   @include desktop {
-    margin-top: 56px;
-    margin-bottom: 98px;
+    padding-top: 56px;
+    padding-bottom: 98px;
   }
 }
 
@@ -65,7 +65,7 @@
   @include tablet {
     margin-bottom: 0;
   }
-  @include desktop{
+  @include desktop {
     margin-bottom: 16px;
   }
 }
@@ -73,7 +73,6 @@
 .app-clock-section-clock-time-of-day {
   color: $white;
   margin-left: 16px;
- 
 }
 
 .app-clock-section-clock-time-of-day-currently {
@@ -84,28 +83,68 @@
   }
 }
 
-.app-clock-section-time-container{
+.app-clock-section-time-container {
   display: flex;
+  margin-bottom: 16px;
+  @include tablet{
+    margin-bottom: 0;
+  }
+  @include desktop{
+    margin-bottom: 16px;
+  }
 }
 
-.app-clock-section-time-symbol{
-  color:white;
-
+.app-clock-section-time-symbol {
+  color: white;
 }
 
-.app-clock-section-time{
+.app-clock-section-time {
   color: $white;
 }
 
-.app-clock-section-time-zone{
+.app-clock-section-time-zone {
   color: $white;
   display: flex;
-align-items: end;
-padding-bottom: 5px;
-margin-left: 5px;
-@include tablet {
-  padding-bottom: 25px;
-  margin-left: 11px;
+  align-items: end;
+  padding-bottom: 5px;
+  margin-left: 5px;
+  @include tablet {
+    padding-bottom: 25px;
+    margin-left: 11px;
+  }
 }
 
+.app-clock-section-btn-container{
+@include desktop{
+  display: flex;
+align-items: center;
+}
+}
+
+.app-clock-section-country{
+  color: $white;
+  margin-bottom: 48px;
+  @include tablet{
+    margin-bottom: 80px;
+  }
+  @include desktop{
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+}
+
+
+.app-clock-section-more-btn{
+  width: 115px;
+height: 39px;
+border-radius: 28px;
+background-color: $white;
+color: #000;
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 14px; /* 116.667% */
+letter-spacing: 3.75px;
+text-transform: uppercase;
 }

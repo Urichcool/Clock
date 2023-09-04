@@ -34,6 +34,12 @@ const AppClockSection = () => {
           <h1 className="heading-h1 app-clock-section-time">11:37</h1>
           <p className="body-time-zone app-clock-section-time-zone">bst</p>
         </div>
+        <div className="app-clock-section-btn-container">
+          <h3 className="heading-h3 app-clock-section-country">
+            in London, UK
+          </h3>
+          <button className="app-clock-section-more-btn">more</button>
+        </div>
       </div>
     </section>
   );
