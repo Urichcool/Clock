@@ -1,10 +1,8 @@
 .app-clock-section {
   padding-top: 32px;
   padding-bottom: 40px;
-  @include tablet {
-    padding-top: 80px;
-    padding-bottom: 64px;
-  }
+  width: 100%;
+  height: 100%;
   @include desktop {
     padding-top: 56px;
     padding-bottom: 98px;
@@ -22,7 +20,6 @@
   @include tablet {
     margin-right: 16px;
     max-width: 540px;
-    margin-bottom: 388px;
   }
   @include desktop {
     margin-bottom: 233px;
@@ -86,11 +83,8 @@
 .app-clock-section-time-container {
   display: flex;
   margin-bottom: 16px;
-  @include tablet{
+  @include tablet {
     margin-bottom: 0;
-  }
-  @include desktop{
-    margin-bottom: 16px;
   }
 }
 
@@ -114,37 +108,65 @@
   }
 }
 
-.app-clock-section-btn-container{
-@include desktop{
-  display: flex;
-align-items: center;
-}
+.app-clock-section-btn-container {
+  @include desktop {
+    display: flex;
+    align-items: end;
+  }
 }
 
-.app-clock-section-country{
+.app-clock-section-country {
   color: $white;
   margin-bottom: 48px;
-  @include tablet{
-    margin-bottom: 80px;
-  }
-  @include desktop{
+
+  @include desktop {
     margin-bottom: 0;
     margin-right: auto;
   }
 }
 
-
-.app-clock-section-more-btn{
+.app-clock-section-more-btn {
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  padding-right: 4px;
+  justify-content: space-between;
   width: 115px;
-height: 39px;
-border-radius: 28px;
-background-color: $white;
-color: #000;
-font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 700;
-line-height: 14px; /* 116.667% */
-letter-spacing: 3.75px;
-text-transform: uppercase;
+  height: 39px;
+  border-radius: 28px;
+  background-color: $white;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 3.75px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 500ms;
+  transition-property: background-color,transform;
+  @include tablet {
+    width: 146px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 5px;
+    padding-left: 21px;
+    padding-right: 9px;
+  }
+  &:hover,
+  &:focus {
+    background-color: rgb(192, 192, 192);
+  }
+  svg {
+    width: 32px;
+    height: 32px;
+    @include tablet {
+       
+      width: 40px;
+      height: 40px;
+    }
+  }
 }

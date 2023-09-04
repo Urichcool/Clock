@@ -1,6 +1,7 @@
 import React from "react";
 import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
+import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 
 const AppClockSection = () => {
   return (
@@ -38,7 +39,9 @@ const AppClockSection = () => {
           <h3 className="heading-h3 app-clock-section-country">
             in London, UK
           </h3>
-          <button className="app-clock-section-more-btn">more</button>
+          <button className="app-clock-section-more-btn">
+            more <ArrowUpIcon />{" "}
+          </button>
         </div>
       </div>
     </section>
