@@ -2,25 +2,32 @@ import React from "react";
 import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
 import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { moreSwitcher, selectMoreSwitcher } from "../../redux/app/appSlice";
 
 const AppClockSection = () => {
+  const dispatch = useAppDispatch();
+  const isMoreOpen = useAppSelector(selectMoreSwitcher)
   return (
     <section className="app-clock-section">
-      {/* <div className="app-clock-section-quote-container">
-        <div className="app-clock-section-quote-container-text">
-          <p className="app-clock-section-quote body-text">
-            “The science of operations, as derived from mathematics more
-            especially, is a science of itself, and has its own abstract truth
-            and value.”
-          </p>
-          <p className="body-text app-clock-section-quote-author">
-            Ada Lovelace
-          </p>
+      {!isMoreOpen && (
+        <div className="app-clock-section-quote-container">
+          <div className="app-clock-section-quote-container-text">
+            <p className="app-clock-section-quote body-text">
+              “The science of operations, as derived from mathematics more
+              especially, is a science of itself, and has its own abstract truth
+              and value.”
+            </p>
+            <p className="body-text app-clock-section-quote-author">
+              Ada Lovelace
+            </p>
+          </div>
+          <button className="app-clock-section-quote-button">
+            <RefreshIcon />
+          </button>
         </div>
-        <button className="app-clock-section-quote-button">
-          <RefreshIcon />
-        </button>
-      </div> */}
+      )}
+
       <div className="app-clock-section-clock-container">
         <div className="app-clock-section-clock-time-of-day-container">
           <SunIcon />
@@ -39,8 +46,13 @@ const AppClockSection = () => {
           <h3 className="heading-h3 app-clock-section-country">
             in London, UK
           </h3>
-          <button className="app-clock-section-more-btn">
-            more <ArrowUpIcon />{" "}
+          <button
+            className="app-clock-section-more-btn"
+            onClick={(e) => {
+              dispatch(moreSwitcher(!isMoreOpen));
+            }}
+          >
+            {isMoreOpen ? "less" : "more"} <ArrowUpIcon />
           </button>
         </div>
       </div>

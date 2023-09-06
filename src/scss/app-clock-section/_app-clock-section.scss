@@ -146,7 +146,7 @@
   border: none;
   cursor: pointer;
   transition: 500ms;
-  transition-property: background-color,transform;
+  transition-property: background-color;
   @include tablet {
     width: 146px;
     height: 56px;
@@ -170,3 +170,5 @@
     }
   }
 }
+
+  
