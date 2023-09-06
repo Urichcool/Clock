@@ -16,13 +16,9 @@
 .app-clock-section-quote-container-text {
   margin-right: 17px;
   max-width: 290px;
-  margin-bottom: 227px;
   @include tablet {
     margin-right: 16px;
     max-width: 540px;
-  }
-  @include desktop {
-    margin-bottom: 233px;
   }
 }
 
@@ -54,6 +50,15 @@
     margin-top: 13px;
   }
 }
+
+.app-clock-section-clock-container{
+  transition: 500ms;
+   margin-top: 227px;
+  @include desktop {
+    margin-top: 233px;
+  }
+}
+
 
 .app-clock-section-clock-time-of-day-container {
   display: flex;

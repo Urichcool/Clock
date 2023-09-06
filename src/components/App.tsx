@@ -5,14 +5,12 @@ import { useAppSelector } from '../redux/hooks';
 import { selectMoreSwitcher } from '../redux/app/appSlice';
 
 function App() {
-  const isMoreOpen = useAppSelector(selectMoreSwitcher)
- 
   return (
     <div className="app-background-day">
       <div className="container">
         <AppClockSection />
       </div>
-      {isMoreOpen && <AppClockMoreSection />}
+      <AppClockMoreSection />
     </div>
   );
 }

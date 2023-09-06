@@ -28,7 +28,7 @@ const AppClockSection = () => {
         </div>
       )}
 
-      <div className="app-clock-section-clock-container">
+      <div className="app-clock-section-clock-container" style={{margin: isMoreOpen ? "0" : ''}}>
         <div className="app-clock-section-clock-time-of-day-container">
           <SunIcon />
           <h4 className="heading-h4 app-clock-section-clock-time-of-day">
