@@ -6,7 +6,7 @@ import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 const AppClockSection = () => {
   return (
     <section className="app-clock-section">
-      <div className="app-clock-section-quote-container">
+      {/* <div className="app-clock-section-quote-container">
         <div className="app-clock-section-quote-container-text">
           <p className="app-clock-section-quote body-text">
             “The science of operations, as derived from mathematics more
@@ -20,7 +20,7 @@ const AppClockSection = () => {
         <button className="app-clock-section-quote-button">
           <RefreshIcon />
         </button>
-      </div>
+      </div> */}
       <div className="app-clock-section-clock-container">
         <div className="app-clock-section-clock-time-of-day-container">
           <SunIcon />

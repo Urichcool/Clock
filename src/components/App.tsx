@@ -1,5 +1,6 @@
 import React from 'react';
 import AppClockSection from './App-clock-section/AppClockSection';
+import AppClockMoreSection from './App-clock-more-section/AppClockMoreSection';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <div className="container">
         <AppClockSection />
       </div>
+      <AppClockMoreSection />
     </div>
   );
 }
