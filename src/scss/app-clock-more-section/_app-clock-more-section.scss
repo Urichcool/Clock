@@ -8,6 +8,7 @@
   backdrop-filter: blur(20.387113571166992px);
   color: $gray;
   transition: 500ms;
+  padding-top: 48px;
   transition-property: transform;
   @include tablet {
     height: 350px;
@@ -27,11 +28,54 @@
   backdrop-filter: blur(20.387113571166992px);
   color: $white;
   transition: 500ms;
+  padding-top: 48px;
   transition-property: transform;
   @include tablet {
     height: 350px;
   }
   @include desktop {
     height: 400px;
+  }
+}
+
+.more-section-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  @include tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 49px;
+  }
+  @include desktop {
+    margin-bottom: 42px;
+  }
+}
+
+.more-section-list {
+  @include tablet {
+    display: flex;
+  }
+}
+
+.more-section-list-container {
+  @include tablet {
+    margin-right: 81px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  @include desktop {
+    border-right-width: 1px;
+    border-right-style: solid;
+    padding-right: 148px;
+    margin-right: 94px;
+    &:last-of-type{
+      border: none;
+    }
   }
 }

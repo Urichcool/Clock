@@ -104,3 +104,35 @@
     line-height: 28px;
   }
 }
+
+.more-section-heading-text{
+  font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; 
+letter-spacing: 2px;
+text-transform: uppercase;
+@include tablet{
+  font-size: 13px;
+  letter-spacing: 2.6px;
+}
+@include desktop{
+   font-size: 15px;
+  letter-spacing: 3px;
+}
+}
+
+.more-section-text{
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+@include tablet{
+  font-size: 40px;
+}
+@include desktop{
+  font-size: 56px;
+}
+}

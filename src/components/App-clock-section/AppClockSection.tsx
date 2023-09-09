@@ -7,9 +7,13 @@ import { moreSwitcher, selectMoreSwitcher } from "../../redux/app/appSlice";
 
 const AppClockSection = () => {
   const dispatch = useAppDispatch();
-  const isMoreOpen = useAppSelector(selectMoreSwitcher)
+  const isMoreOpen = useAppSelector(selectMoreSwitcher);
   return (
-    <section className="app-clock-section">
+    <section
+      className={
+        isMoreOpen ? "app-clock-section-more-open" : "app-clock-section"
+      }
+    >
       {!isMoreOpen && (
         <div className="app-clock-section-quote-container">
           <div className="app-clock-section-quote-container-text">
@@ -28,7 +32,10 @@ const AppClockSection = () => {
         </div>
       )}
 
-      <div className="app-clock-section-clock-container" style={{margin: isMoreOpen ? "0" : ''}}>
+      <div
+        className="app-clock-section-clock-container"
+        style={{ margin: isMoreOpen ? "0" : "" }}
+      >
         <div className="app-clock-section-clock-time-of-day-container">
           <SunIcon />
           <h4 className="heading-h4 app-clock-section-clock-time-of-day">

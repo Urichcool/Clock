@@ -1,12 +1,15 @@
 .app-clock-section {
   padding-top: 32px;
-  padding-bottom: 40px;
-  width: 100%;
-  height: 100%;
   @include desktop {
     padding-top: 56px;
-    padding-bottom: 98px;
   }
+}
+
+.app-clock-section-more-open{
+padding-top: 99px;
+@include desktop{
+  padding-top: 56px;
+}
 }
 
 .app-clock-section-quote-container {
