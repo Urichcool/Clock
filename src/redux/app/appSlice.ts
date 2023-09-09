@@ -1,31 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
+import { fetchQuote } from "./operations";
 
-// Define a type for the slice state
 interface AppState {
   isMoreOpen: boolean;
+  quote: { quote: string; author: string };
+  quoteIsLoading: boolean;
+  quoteIsError: boolean;
 }
 
-// Define the initial state using that type
 const initialState: AppState = {
   isMoreOpen: false,
+  quote: { quote: "", author: "" },
+  quoteIsLoading: false,
+  quoteIsError: false,
 };
 
 export const appSlice = createSlice({
   name: "app",
-  // `createSlice` will infer the state type from the `initialState` argument
+
   initialState,
   reducers: {
     moreSwitcher: (state, action) => {
       state.isMoreOpen = action.payload;
     },
   },
+  extraReducers: (builder) =>
+    builder
+      .addCase(fetchQuote.pending, (state) => {
+        state.quoteIsLoading = true;
+      })
+      .addCase(fetchQuote.fulfilled, (state, action) => {
+        state.quote = action.payload;
+        state.quoteIsLoading = false;
+      })
+      .addCase(fetchQuote.rejected, (state) => {
+        state.quoteIsError = true;
+        state.quoteIsLoading = false;
+      }),
 });
 
 export const { moreSwitcher } = appSlice.actions;
 
-// Other code such as selectors can use the imported `RootState` type
 export const selectMoreSwitcher = (state: RootState) => state.app.isMoreOpen;
+export const selectQuoteData = (state: RootState) => state.app.quote;
 
 export const appReducer = appSlice.reducer;

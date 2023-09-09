@@ -26,6 +26,7 @@ padding-top: 99px;
 }
 
 .app-clock-section-quote-button {
+  margin-top: 10px;
   width: 18px;
   height: 18px;
   display: flex;
@@ -46,11 +47,22 @@ padding-top: 99px;
 }
 
 .app-clock-section-quote-author {
+   font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+
+  line-height: 22px;
+  @include tablet {
+    font-size: 18px;
+    line-height: 28px;
+     margin-top: 13px;
+  }
   margin-top: 8px;
   color: $white;
   font-weight: 700;
   @include tablet {
-    margin-top: 13px;
+   
+     font-weight: 700;
   }
 }
 

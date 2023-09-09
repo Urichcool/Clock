@@ -3,9 +3,11 @@ import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
 import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { moreSwitcher, selectMoreSwitcher } from "../../redux/app/appSlice";
+import { moreSwitcher, selectMoreSwitcher, selectQuoteData } from "../../redux/app/appSlice";
 
 const AppClockSection = () => {
+  const {quote, author}: { quote: string; author: string } =
+    useAppSelector(selectQuoteData);
   const dispatch = useAppDispatch();
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
   return (
@@ -17,13 +19,9 @@ const AppClockSection = () => {
       {!isMoreOpen && (
         <div className="app-clock-section-quote-container">
           <div className="app-clock-section-quote-container-text">
-            <p className="app-clock-section-quote body-text">
-              “The science of operations, as derived from mathematics more
-              especially, is a science of itself, and has its own abstract truth
-              and value.”
-            </p>
-            <p className="body-text app-clock-section-quote-author">
-              Ada Lovelace
+            <p className="app-clock-section-quote body-text">{quote}</p>
+            <p className="app-clock-section-quote-author">
+            {author}
             </p>
           </div>
           <button className="app-clock-section-quote-button">
