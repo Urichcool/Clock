@@ -11,8 +11,11 @@ import {
 } from "../../redux/app/appSlice";
 import { ColorRing } from "react-loader-spinner";
 import { fetchQuote } from "../../redux/app/operations";
+import { selectTime } from "../../redux/clock/clockSlice";
+import { timeFunc } from "../../utils/timeFunc";
 
 const AppClockSection = () => {
+  const {time, abbreviation} = useAppSelector(selectTime)
   const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
   const dispatch = useAppDispatch();
@@ -66,8 +69,8 @@ const AppClockSection = () => {
           </h4>
         </div>
         <div className="app-clock-section-time-container">
-          <h1 className="heading-h1 app-clock-section-time">11:37</h1>
-          <p className="body-time-zone app-clock-section-time-zone">bst</p>
+          <h1 className="heading-h1 app-clock-section-time">{timeFunc(time)}</h1>
+          <p className="body-time-zone app-clock-section-time-zone">{abbreviation}</p>
         </div>
         <div className="app-clock-section-btn-container">
           <h3 className="heading-h3 app-clock-section-country">
