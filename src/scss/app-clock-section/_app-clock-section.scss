@@ -18,10 +18,10 @@ padding-top: 99px;
 
 .app-clock-section-quote-container-text {
   margin-right: 17px;
-  max-width: 290px;
+  width: 290px;
   @include tablet {
     margin-right: 16px;
-    max-width: 540px;
+    width: 540px;
   }
 }
 
@@ -191,4 +191,13 @@ padding-top: 99px;
   }
 }
 
-  
+.app-clock-section-loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 290px;
+  @include tablet {
+    margin-right: 16px;
+    width: 540px;
+  }
+}

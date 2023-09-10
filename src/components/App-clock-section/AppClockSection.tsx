@@ -3,12 +3,20 @@ import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
 import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { moreSwitcher, selectMoreSwitcher, selectQuoteData } from "../../redux/app/appSlice";
+import {
+  moreSwitcher,
+  selectIsQuoteLoading,
+  selectMoreSwitcher,
+  selectQuoteData,
+} from "../../redux/app/appSlice";
+import { ColorRing } from "react-loader-spinner";
+import { fetchQuote } from "../../redux/app/operations";
 
 const AppClockSection = () => {
-  const {quote, author}: { quote: string; author: string } =
+  const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
   const dispatch = useAppDispatch();
+  const isQuoteLoading = useAppSelector(selectIsQuoteLoading);
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
   return (
     <section
@@ -18,13 +26,27 @@ const AppClockSection = () => {
     >
       {!isMoreOpen && (
         <div className="app-clock-section-quote-container">
-          <div className="app-clock-section-quote-container-text">
-            <p className="app-clock-section-quote body-text">{quote}</p>
-            <p className="app-clock-section-quote-author">
-            {author}
-            </p>
-          </div>
-          <button className="app-clock-section-quote-button">
+          {isQuoteLoading ? (
+            <div className="app-clock-section-loader">
+              <ColorRing
+                height="50"
+                width="50"
+                colors={["#fff", "#fff", "#fff", "#fff", "#fff"]}
+              />
+            </div>
+          ) : (
+            <div className="app-clock-section-quote-container-text">
+              <p className="app-clock-section-quote body-text">{quote}</p>
+              <p className="app-clock-section-quote-author">{author}</p>
+            </div>
+          )}
+
+          <button
+            className="app-clock-section-quote-button"
+            onClick={(e: React.MouseEvent<HTMLButtonElement>): void => {
+              dispatch(fetchQuote());
+            }}
+          >
             <RefreshIcon />
           </button>
         </div>
