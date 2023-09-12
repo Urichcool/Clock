@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const timeBASE_URL: string = "http://worldtimeapi.org/api/";
-const ip_apiBase_URL: string = "http://ip-api.com/";
+const timeBASE_URL: string = "https://worldtimeapi.org/api/";
+const ip_apiBase_URL: string = "https://ip-api.com/";
 
 export const fetchTime = createAsyncThunk("fetchTime", async () => {
   const res = await axios.get(`${timeBASE_URL}ip`);
