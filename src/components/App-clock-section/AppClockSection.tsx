@@ -5,22 +5,30 @@ import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   moreSwitcher,
+  selectIsDay,
   selectIsQuoteLoading,
   selectMoreSwitcher,
   selectQuoteData,
 } from "../../redux/app/appSlice";
 import { ColorRing } from "react-loader-spinner";
 import { fetchQuote } from "../../redux/app/operations";
-import { selectTime } from "../../redux/clock/clockSlice";
+import { selectLocation, selectTime } from "../../redux/clock/clockSlice";
 import { timeFunc } from "../../utils/timeFunc";
+import { timeOfTheDayFunc } from "../../utils/timeOfTheDayFunc";
+import MoonIcon from "../../images/icons/MoonIcon";
 
 const AppClockSection = () => {
-  const {time, abbreviation} = useAppSelector(selectTime)
+  const { time, abbreviation } = useAppSelector(selectTime);
   const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
   const dispatch = useAppDispatch();
   const isQuoteLoading = useAppSelector(selectIsQuoteLoading);
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
+  const isDay = useAppSelector(selectIsDay);
+  const { city, country } = useAppSelector(selectLocation)
+  
+  
+
   return (
     <section
       className={
@@ -60,21 +68,27 @@ const AppClockSection = () => {
         style={{ margin: isMoreOpen ? "0" : "" }}
       >
         <div className="app-clock-section-clock-time-of-day-container">
-          <SunIcon />
+          {isDay ? <SunIcon /> : <MoonIcon />}
+
           <h4 className="heading-h4 app-clock-section-clock-time-of-day">
-            good morning
+            {timeOfTheDayFunc(new Date(time).getHours())}
           </h4>
           <h4 className="heading-h4 app-clock-section-clock-time-of-day-currently">
             , it's currently
           </h4>
         </div>
         <div className="app-clock-section-time-container">
-          <h1 className="heading-h1 app-clock-section-time">{timeFunc(time)}</h1>
-          <p className="body-time-zone app-clock-section-time-zone">{abbreviation}</p>
+          <h1 className="heading-h1 app-clock-section-time">
+            {timeFunc(time)}
+          </h1>
+          <p className="body-time-zone app-clock-section-time-zone">
+            {abbreviation}
+          </p>
         </div>
+
         <div className="app-clock-section-btn-container">
           <h3 className="heading-h3 app-clock-section-country">
-            in London, UK
+            {`in ${city}, ${country}`}
           </h3>
           <button
             className="app-clock-section-more-btn"

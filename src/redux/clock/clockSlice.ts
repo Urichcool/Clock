@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import { fetchTime } from "./operations";
+import { fetchTime, fetchLocation } from "./operations";
 
 interface clockState {
   isDay: boolean;
@@ -11,6 +11,10 @@ interface clockState {
     dayOfWeek: string;
     dayOfYear: string;
     weekNumber: string;
+  };
+  location: {
+    country: string;
+    city: string;
   };
 }
 
@@ -24,25 +28,29 @@ const initialState: clockState = {
     dayOfYear: "",
     weekNumber: "",
   },
+  location: {
+    country: "",
+    city: "",
+  },
 };
 
 export const clockSlice = createSlice({
   name: "clock",
   initialState,
-  reducers: {
-    dayNightSwither: (state, action) => {
-      state.isDay = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) =>
-    builder.addCase(fetchTime.fulfilled, (state, action) => {
-      state.time = action.payload;
-    }),
+    builder
+      .addCase(fetchTime.fulfilled, (state, action) => {
+        state.time = action.payload;
+      })
+      .addCase(fetchLocation.fulfilled, (state, action) => {
+        state.location = action.payload;
+      }),
 });
-
-export const { dayNightSwither } = clockSlice.actions;
 
 export const selectDayNightSwitcher = (state: RootState) => state.clock.isDay;
 export const selectTime = (state: RootState) => state.clock.time;
+export const selectLocation = (state: RootState) => state.clock.location;
+
 
 export const clockReducer = clockSlice.reducer;

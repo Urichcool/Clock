@@ -7,6 +7,7 @@ interface AppState {
   quote: { quote: string; author: string };
   quoteIsLoading: boolean;
   quoteIsError: boolean;
+  isDay: boolean;
 }
 
 const initialState: AppState = {
@@ -14,6 +15,7 @@ const initialState: AppState = {
   quote: { quote: "", author: "" },
   quoteIsLoading: false,
   quoteIsError: false,
+  isDay: false,
 };
 
 export const appSlice = createSlice({
@@ -23,6 +25,9 @@ export const appSlice = createSlice({
   reducers: {
     moreSwitcher: (state, action) => {
       state.isMoreOpen = action.payload;
+    },
+    isDaySwitcher: (state, action) => {
+      state.isDay = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -40,9 +45,12 @@ export const appSlice = createSlice({
       }),
 });
 
-export const { moreSwitcher } = appSlice.actions;
+export const { moreSwitcher, isDaySwitcher } = appSlice.actions;
 
 export const selectMoreSwitcher = (state: RootState) => state.app.isMoreOpen;
 export const selectQuoteData = (state: RootState) => state.app.quote;
-export const selectIsQuoteLoading = (state: RootState) => state.app.quoteIsLoading
+export const selectIsQuoteLoading = (state: RootState) =>
+  state.app.quoteIsLoading;
+export const selectIsDay = (state: RootState) => state.app.isDay;
+
 export const appReducer = appSlice.reducer;

@@ -1,14 +1,17 @@
 import React from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { selectMoreSwitcher } from "../../redux/app/appSlice";
+import { selectIsDay, selectMoreSwitcher } from "../../redux/app/appSlice";
 import { selectTime } from "../../redux/clock/clockSlice";
 
 function AppClockMoreSection() {
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
-  const {timeZone, dayOfWeek, dayOfYear, weekNumber} = useAppSelector(selectTime)
+  const { timeZone, dayOfWeek, dayOfYear, weekNumber } = useAppSelector(selectTime)
+  const isDay = useAppSelector(selectIsDay);
   return (
     <section
-      className="app-clock-more-section-day"
+      className={
+        isDay ? "app-clock-more-section-day" : "app-clock-more-section-night"
+      }
       style={{
         transform: isMoreOpen ? "translateY(0)" : "translateY(100%)",
       }}
