@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { appReducer } from "./app/appSlice";
+import { clockReducer } from "./clock/clockSlice";
 
 export const store = configureStore({
   reducer: {
-   app: appReducer
+    app: appReducer,
+    clock: clockReducer
   }
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

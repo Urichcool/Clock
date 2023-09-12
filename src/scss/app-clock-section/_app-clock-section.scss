@@ -5,11 +5,11 @@
   }
 }
 
-.app-clock-section-more-open{
-padding-top: 99px;
-@include desktop{
-  padding-top: 56px;
-}
+.app-clock-section-more-open {
+  padding-top: 99px;
+  @include desktop {
+    padding-top: 56px;
+  }
 }
 
 .app-clock-section-quote-container {
@@ -18,14 +18,15 @@ padding-top: 99px;
 
 .app-clock-section-quote-container-text {
   margin-right: 17px;
-  max-width: 290px;
+  width: 290px;
   @include tablet {
     margin-right: 16px;
-    max-width: 540px;
+    width: 540px;
   }
 }
 
 .app-clock-section-quote-button {
+  margin-top: 10px;
   width: 18px;
   height: 18px;
   display: flex;
@@ -46,22 +47,31 @@ padding-top: 99px;
 }
 
 .app-clock-section-quote-author {
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+
+  line-height: 22px;
+  @include tablet {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 13px;
+  }
   margin-top: 8px;
   color: $white;
   font-weight: 700;
   @include tablet {
-    margin-top: 13px;
+    font-weight: 700;
   }
 }
 
-.app-clock-section-clock-container{
+.app-clock-section-clock-container {
   transition: 500ms;
-   margin-top: 227px;
+  margin-top: 227px;
   @include desktop {
     margin-top: 233px;
   }
 }
-
 
 .app-clock-section-clock-time-of-day-container {
   display: flex;
@@ -172,11 +182,41 @@ padding-top: 99px;
     width: 32px;
     height: 32px;
     @include tablet {
-       
       width: 40px;
       height: 40px;
     }
   }
 }
 
-  
+.app-clock-section-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 70px;
+  @include tablet {
+    margin-right: 16px;
+    width: 540px;
+  }
+}
+
+.app-clock-section-clock-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 244px;
+  height: 100px;
+  @include tablet {
+    margin: 0;
+    width: 426px;
+    height: 175px;
+  }
+  @include desktop {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 487px;
+    height: 200px;
+  }
+}

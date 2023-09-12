@@ -1,12 +1,17 @@
 import React from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { selectMoreSwitcher } from "../../redux/app/appSlice";
+import { selectIsDay, selectMoreSwitcher } from "../../redux/app/appSlice";
+import { selectTime } from "../../redux/clock/clockSlice";
 
 function AppClockMoreSection() {
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
+  const { timeZone, dayOfWeek, dayOfYear, weekNumber } = useAppSelector(selectTime)
+  const isDay = useAppSelector(selectIsDay);
   return (
     <section
-      className="app-clock-more-section-day"
+      className={
+        isDay ? "app-clock-more-section-day" : "app-clock-more-section-night"
+      }
       style={{
         transform: isMoreOpen ? "translateY(0)" : "translateY(100%)",
       }}
@@ -19,21 +24,21 @@ function AppClockMoreSection() {
           >
             <li className="more-section-item">
               <p className="more-section-heading-text">current timezone</p>
-              <p className="more-section-text">Europe/London</p>
+              <p className="more-section-text">{timeZone}</p>
             </li>
             <li className="more-section-item">
               <p className="more-section-heading-text">day of the year</p>
-              <p className="more-section-text">295</p>
+              <p className="more-section-text">{dayOfYear}</p>
             </li>
           </div>
           <div className="more-section-list-container">
             <li className="more-section-item">
               <p className="more-section-heading-text">day of the week</p>
-              <p className="more-section-text">5</p>
+              <p className="more-section-text">{dayOfWeek}</p>
             </li>
             <li className="more-section-item">
               <p className="more-section-heading-text">week number</p>
-              <p className="more-section-text">42</p>
+              <p className="more-section-text">{weekNumber}</p>
             </li>
           </div>
         </ul>
