@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "https://Urichcool.github.io/Clock-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
