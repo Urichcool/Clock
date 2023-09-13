@@ -25,9 +25,7 @@ const AppClockSection = () => {
   const isQuoteLoading = useAppSelector(selectIsQuoteLoading);
   const isMoreOpen = useAppSelector(selectMoreSwitcher);
   const isDay = useAppSelector(selectIsDay);
-  const { city, country } = useAppSelector(selectLocation)
-  
-  
+  const { city, country } = useAppSelector(selectLocation);
 
   return (
     <section

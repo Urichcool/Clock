@@ -7,6 +7,8 @@ import { fetchLocation, fetchTime } from "../redux/clock/operations";
 import { isDaySwitcher, selectIsDay } from "../redux/app/appSlice";
 import { timeOfTheDayFunc } from "../utils/timeOfTheDayFunc";
 import { selectTime } from "../redux/clock/clockSlice";
+import { timeFunc } from "../utils/timeFunc";
+import { ThreeDots } from "react-loader-spinner";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -14,7 +16,7 @@ function App() {
   const isDay = useAppSelector(selectIsDay);
 
   useEffect(() => {
-    dispatch(fetchLocation())
+    dispatch(fetchLocation());
     dispatch(
       isDaySwitcher(
         timeOfTheDayFunc(new Date(time).getHours()) === "Good morning" ||
@@ -27,13 +29,25 @@ function App() {
 
     dispatch(fetchQuote());
   }, [dispatch]);
+
   return (
-    <div className={isDay ? "app-background-day" : "app-background-night"}>
-      <div className="container">
-        <AppClockSection />
+    <>
+      {timeFunc(time) === "00:00" && (
+        <div className="app-clock-section-clock-loader">
+          <ThreeDots
+            height="250"
+            width="250"
+            color="#fff"
+          />
+        </div>
+      )}
+      <div className={isDay ? "app-background-day" : "app-background-night"}>
+        <div className="container">
+          <AppClockSection />
+        </div>
+        <AppClockMoreSection />
       </div>
-      <AppClockMoreSection />
-    </div>
+    </>
   );
 }
 

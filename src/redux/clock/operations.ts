@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const timeBASE_URL: string = "https://worldtimeapi.org/api/";
-const ip_apiBase_URL: string = "https://ip-api.com/";
+const ip_apiBase_URL: string = "https://freeipapi.com";
 
 export const fetchTime = createAsyncThunk("fetchTime", async () => {
   const res = await axios.get(`${timeBASE_URL}ip`);
@@ -17,10 +17,10 @@ export const fetchTime = createAsyncThunk("fetchTime", async () => {
 });
 
 export const fetchLocation = createAsyncThunk("fetchLocation", async () => {
-  const res = await axios.get(`${ip_apiBase_URL}json`);
+  const res = await axios.get(`${ip_apiBase_URL}/api/json/`);
   console.log(res)
   return {
-    country: res.data.country,
-    city: res.data.city
+    country: res.data.countryName,
+    city: res.data.cityName,
   };
 });
