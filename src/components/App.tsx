@@ -9,6 +9,7 @@ import { timeOfTheDayFunc } from "../utils/timeOfTheDayFunc";
 import { selectTime } from "../redux/clock/clockSlice";
 import { timeFunc } from "../utils/timeFunc";
 import { ThreeDots } from "react-loader-spinner";
+import { isDayFunc } from "../utils/isDayFunc";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -19,8 +20,7 @@ function App() {
     dispatch(fetchLocation());
     dispatch(
       isDaySwitcher(
-        timeOfTheDayFunc(new Date(time).getHours()) === "Good morning" ||
-          timeOfTheDayFunc(new Date(time).getHours()) === "Good afternoon"
+       isDayFunc(time)
       )
     );
     setInterval(() => {
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      {timeFunc(time) === "00:00" && (
+      {timeFunc(time) === "0" && (
         <div className="app-clock-section-clock-loader">
           <ThreeDots
             height="250"
