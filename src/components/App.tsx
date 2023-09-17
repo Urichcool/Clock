@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import AppClockSection from "./App-clock-section/AppClockSection";
 import AppClockMoreSection from "./App-clock-more-section/AppClockMoreSection";
 import { fetchQuote } from "../redux/app/operations";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchLocation, fetchTime } from "../redux/clock/operations";
 import { isDaySwitcher, selectIsDay } from "../redux/app/appSlice";
-import { timeOfTheDayFunc } from "../utils/timeOfTheDayFunc";
 import { selectTime } from "../redux/clock/clockSlice";
 import { timeFunc } from "../utils/timeFunc";
 import { ThreeDots } from "react-loader-spinner";
@@ -15,6 +14,7 @@ function App() {
   const dispatch = useAppDispatch();
   const { time } = useAppSelector(selectTime);
   const isDay = useAppSelector(selectIsDay);
+
 
   useEffect(() => {
     dispatch(fetchLocation());

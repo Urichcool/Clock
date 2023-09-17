@@ -62,7 +62,7 @@
   }
 }
 
-.more-section-list-container {
+.more-section-list-container-night {
   @include tablet {
     margin-right: 81px;
     &:last-of-type {
@@ -72,6 +72,26 @@
   @include desktop {
     border-right-width: 1px;
     border-right-style: solid;
+    border-right-color: $white;
+    padding-right: 148px;
+    margin-right: 94px;
+    &:last-of-type{
+      border: none;
+    }
+  }
+}
+
+.more-section-list-container-day {
+  @include tablet {
+    margin-right: 81px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  @include desktop {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: $gray;
     padding-right: 148px;
     margin-right: 94px;
     &:last-of-type{

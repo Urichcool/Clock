@@ -18,7 +18,8 @@ import { timeOfTheDayFunc } from "../../utils/timeOfTheDayFunc";
 import MoonIcon from "../../images/icons/MoonIcon";
 
 const AppClockSection = () => {
-  const { time, abbreviation } = useAppSelector(selectTime);
+  const { time, abbreviation }: { time: string; abbreviation: string } =
+    useAppSelector(selectTime);
   const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
   const dispatch = useAppDispatch();

@@ -9,8 +9,8 @@ interface clockState {
     abbreviation: string;
     timeZone: string;
     dayOfWeek: string;
-    dayOfYear: string;
-    weekNumber: string;
+    dayOfYear: number;
+    weekNumber: number;
   };
   location: {
     country: string;
@@ -25,8 +25,8 @@ const initialState: clockState = {
     abbreviation: "",
     timeZone: "",
     dayOfWeek: "",
-    dayOfYear: "",
-    weekNumber: "",
+    dayOfYear: 0,
+    weekNumber: 0,
   },
   location: {
     country: "",
