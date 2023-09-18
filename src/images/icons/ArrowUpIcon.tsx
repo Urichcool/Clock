@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { selectMoreSwitcher } from "../../redux/app/appSlice";
 
-function ArrowUpIcon() {
-  const isMoreOpen = useAppSelector(selectMoreSwitcher);
+const ArrowUpIcon:FC = () => {
+  const isMoreOpen:boolean = useAppSelector(selectMoreSwitcher);
   return (
     <svg
       style={{

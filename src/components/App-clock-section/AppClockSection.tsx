@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
 import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
@@ -17,16 +17,17 @@ import { timeFunc } from "../../utils/timeFunc";
 import { timeOfTheDayFunc } from "../../utils/timeOfTheDayFunc";
 import MoonIcon from "../../images/icons/MoonIcon";
 
-const AppClockSection = () => {
+const AppClockSection: FC = () => {
+  const dispatch = useAppDispatch();
   const { time, abbreviation }: { time: string; abbreviation: string } =
     useAppSelector(selectTime);
   const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
-  const dispatch = useAppDispatch();
-  const isQuoteLoading = useAppSelector(selectIsQuoteLoading);
-  const isMoreOpen = useAppSelector(selectMoreSwitcher);
-  const isDay = useAppSelector(selectIsDay);
-  const { city, country } = useAppSelector(selectLocation);
+  const isQuoteLoading: boolean = useAppSelector(selectIsQuoteLoading);
+  const isMoreOpen: boolean = useAppSelector(selectMoreSwitcher);
+  const isDay: boolean = useAppSelector(selectIsDay);
+  const { city, country }: { city: string; country: string } =
+    useAppSelector(selectLocation);
 
   return (
     <section

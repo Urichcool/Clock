@@ -119,7 +119,7 @@
 .app-clock-section-time-zone {
   color: $white;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   padding-bottom: 5px;
   margin-left: 5px;
   @include tablet {
@@ -131,7 +131,7 @@
 .app-clock-section-btn-container {
   @include desktop {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
   }
 }
 

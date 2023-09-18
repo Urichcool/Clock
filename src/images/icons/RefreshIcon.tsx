@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-function RefreshIcon() {
+const RefreshIcon:FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

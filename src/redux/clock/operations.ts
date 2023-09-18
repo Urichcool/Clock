@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { dayOfWeekFunc } from "../../utils/dayOfWeekFunc";
 
 const timeBASE_URL: string = "https://worldtimeapi.org/api/";
 const ip_apiBase_URL: string = "https://freeipapi.com";
 
 export const fetchTime = createAsyncThunk("fetchTime", async () => {
-  const res = await axios.get(`${timeBASE_URL}ip`);
+  const res:AxiosResponse = await axios.get(`${timeBASE_URL}ip`);
   return {
     time: res.data.datetime,
     abbreviation: res.data.abbreviation,
