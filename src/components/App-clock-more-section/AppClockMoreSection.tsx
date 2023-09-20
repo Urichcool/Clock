@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { selectIsDay, selectMoreSwitcher } from "../../redux/app/appSlice";
-import { selectTime } from "../../redux/clock/clockSlice";
+import { selectIsDay, selectMoreSwitcher } from "../../redux/app/selectors";
+import { selectTime } from "../../redux/clock/selectors";
 
 const AppClockMoreSection: FC = () => {
   const isMoreOpen: boolean = useAppSelector(selectMoreSwitcher);

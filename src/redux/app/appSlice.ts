@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../store";
 import { fetchQuote } from "./operations";
 
 interface AppState {
@@ -47,10 +46,5 @@ export const appSlice = createSlice({
 
 export const { moreSwitcher, isDaySwitcher } = appSlice.actions;
 
-export const selectMoreSwitcher = (state: RootState) => state.app.isMoreOpen;
-export const selectQuoteData = (state: RootState) => state.app.quote;
-export const selectIsQuoteLoading = (state: RootState) =>
-  state.app.quoteIsLoading;
-export const selectIsDay = (state: RootState) => state.app.isDay;
 
 export const appReducer = appSlice.reducer;

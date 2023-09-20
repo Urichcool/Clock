@@ -9,7 +9,8 @@ export const fetchQuote = createAsyncThunk(
     try {
       const res: AxiosResponse = await axios.get(`${quoteBASE_URL}random`);
       return { quote: res.data.content, author: res.data.author };
-    } catch {
+    } catch(e) {
+      console.error((e as Error).message);
       return { quote: "Something went wrong please try again", author: "" };
     }
   }

@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { selectMoreSwitcher } from "../../redux/app/appSlice";
+import { selectMoreSwitcher } from "../../redux/app/selectors";
 
-const ArrowUpIcon:FC = () => {
-  const isMoreOpen:boolean = useAppSelector(selectMoreSwitcher);
+const ArrowUpIcon: FC = () => {
+  const isMoreOpen: boolean = useAppSelector(selectMoreSwitcher);
   return (
     <svg
       style={{
@@ -22,6 +22,6 @@ const ArrowUpIcon:FC = () => {
       <path d="M14 23L20 17L26 23" stroke="white" strokeWidth="2" />
     </svg>
   );
-}
+};
 
 export default ArrowUpIcon;
