@@ -35,7 +35,7 @@ const App: FC = () => {
       )}
       <div className={isDay ? "app-background-day" : "app-background-night"}>
         <div className="container">
-          <AppClockSection />
+          <AppClockSection data-testid="clock-section" />
         </div>
         <AppClockMoreSection />
       </div>
