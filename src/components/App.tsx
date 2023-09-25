@@ -19,6 +19,7 @@ const App: FC = () => {
   useEffect(() => {
     dispatch(fetchLocation());
     dispatch(isDaySwitcher(isDayCheck));
+     dispatch(fetchTime());
     setInterval(() => {
       dispatch(fetchTime());
     }, 1000);
@@ -35,7 +36,7 @@ const App: FC = () => {
       )}
       <div className={isDay ? "app-background-day" : "app-background-night"}>
         <div className="container">
-          <AppClockSection data-testid="clock-section" />
+          <AppClockSection />
         </div>
         <AppClockMoreSection />
       </div>

@@ -25,6 +25,7 @@ const AppClockMoreSection: FC = () => {
       style={{
         transform: isMoreOpen ? "translateY(0)" : "translateY(100%)",
       }}
+      data-testid="more-section"
     >
       <div className="container">
         <ul className="more-section-list">

@@ -34,11 +34,17 @@ const AppClockSection: FC = () => {
       className={
         isMoreOpen ? "app-clock-section-more-open" : "app-clock-section"
       }
+      data-testid="clock-section"
     >
       {!isMoreOpen && (
-        <div className="app-clock-section-quote-container">
+        <div
+          className="app-clock-section-quote-container"
+          data-testid="quote-container"
+        >
           {isQuoteLoading ? (
-            <div className="app-clock-section-loader">
+            <div
+              className="app-clock-section-loader"
+            >
               <ColorRing
                 height="50"
                 width="50"
@@ -54,6 +60,7 @@ const AppClockSection: FC = () => {
 
           <button
             className="app-clock-section-quote-button"
+            data-testid="quote-button"
             onClick={(e: React.MouseEvent<HTMLButtonElement>): void => {
               dispatch(fetchQuote());
             }}
@@ -92,6 +99,7 @@ const AppClockSection: FC = () => {
           </h3>
           <button
             className="app-clock-section-more-btn"
+            data-testid="more-button"
             onClick={(e) => {
               dispatch(moreSwitcher(!isMoreOpen));
             }}
