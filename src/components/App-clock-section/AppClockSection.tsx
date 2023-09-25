@@ -3,16 +3,16 @@ import RefreshIcon from "../../images/icons/RefreshIcon";
 import SunIcon from "../../images/icons/SunIcon";
 import ArrowUpIcon from "../../images/icons/ArrowUpIcon";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { moreSwitcher } from "../../redux/app/appSlice";
 import {
-  moreSwitcher,
   selectIsDay,
   selectIsQuoteLoading,
   selectMoreSwitcher,
   selectQuoteData,
-} from "../../redux/app/appSlice";
+} from "../../redux/app/selectors";
 import { ColorRing } from "react-loader-spinner";
 import { fetchQuote } from "../../redux/app/operations";
-import { selectLocation, selectTime } from "../../redux/clock/clockSlice";
+import { selectLocation, selectTime } from "../../redux/clock/selectors";
 import { timeFunc } from "../../utils/timeFunc";
 import { timeOfTheDayFunc } from "../../utils/timeOfTheDayFunc";
 import MoonIcon from "../../images/icons/MoonIcon";

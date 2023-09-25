@@ -4,11 +4,12 @@ import AppClockMoreSection from "./App-clock-more-section/AppClockMoreSection";
 import { fetchQuote } from "../redux/app/operations";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchLocation, fetchTime } from "../redux/clock/operations";
-import { isDaySwitcher, selectIsDay } from "../redux/app/appSlice";
-import { selectTime } from "../redux/clock/clockSlice";
+import { isDaySwitcher } from "../redux/app/appSlice";
+import { selectTime } from "../redux/clock/selectors";
 import { timeFunc } from "../utils/timeFunc";
 import { ThreeDots } from "react-loader-spinner";
 import { isDayFunc } from "../utils/isDayFunc";
+import { selectIsDay } from "../redux/app/selectors";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();

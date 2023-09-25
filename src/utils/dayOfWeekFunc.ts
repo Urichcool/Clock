@@ -1,9 +1,8 @@
 export const dayOfWeekFunc = (day: number): string => {
   let dayOfWeek: string = "";
- 
-    
-    switch (day) {
-      case 0:
+
+  switch (day) {
+    case 0:
       dayOfWeek = "Sunday";
       break;
 
@@ -33,9 +32,7 @@ export const dayOfWeekFunc = (day: number): string => {
 
     default:
       dayOfWeek = "";
-  
   }
-  
 
   return dayOfWeek;
 };
