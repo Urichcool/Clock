@@ -28,8 +28,8 @@ const AppClockMoreSection: FC = () => {
       data-testid="more-section"
     >
       <div className="container">
-        <ul className="more-section-list">
-          <div
+        <div className="more-section-list">
+          <ul
             className={
               isDay
                 ? "more-section-list-container-day"
@@ -45,8 +45,8 @@ const AppClockMoreSection: FC = () => {
               <p className="more-section-heading-text">day of the year</p>
               <p className="more-section-text">{dayOfYear}</p>
             </li>
-          </div>
-          <div
+          </ul>
+          <ul
             className={
               isDay
                 ? "more-section-list-container-day"
@@ -61,8 +61,8 @@ const AppClockMoreSection: FC = () => {
               <p className="more-section-heading-text">week number</p>
               <p className="more-section-text">{weekNumber}</p>
             </li>
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
   );
