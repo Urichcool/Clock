@@ -19,7 +19,7 @@ import MoonIcon from "../../images/icons/MoonIcon";
 
 const AppClockSection: FC = () => {
   const dispatch = useAppDispatch();
-  const { time, abbreviation }: { time: string; abbreviation: string } =
+  const { time }: { time: string } =
     useAppSelector(selectTime);
   const { quote, author }: { quote: string; author: string } =
     useAppSelector(selectQuoteData);
@@ -88,9 +88,6 @@ const AppClockSection: FC = () => {
           <h1 className="heading-h1 app-clock-section-time">
             {timeFunc(time)}
           </h1>
-          <p className="body-time-zone app-clock-section-time-zone">
-            {abbreviation}
-          </p>
         </div>
 
         <div className="app-clock-section-btn-container">

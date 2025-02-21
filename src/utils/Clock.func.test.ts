@@ -1,32 +1,47 @@
-import { dayOfWeekFunc } from "./dayOfWeekFunc";
+import { monthFunc } from "./monthFunc";
 import { isDayFunc } from "./isDayFunc";
 import { timeFunc } from "./timeFunc";
 import { timeOfTheDayFunc } from "./timeOfTheDayFunc";
 
-describe("dayOfWeekFunc", () => {
-  test("sunday", () => {
-    expect(dayOfWeekFunc(0)).toBe("Sunday");
+describe("monthFunc", () => {
+  test("January", () => {
+    expect(monthFunc(1)).toBe("January");
   });
-  test("monday", () => {
-    expect(dayOfWeekFunc(1)).toBe("Monday");
+  test("February", () => {
+    expect(monthFunc(2)).toBe("February");
   });
-  test("tuesday", () => {
-    expect(dayOfWeekFunc(2)).toBe("Tuesday");
+  test("March", () => {
+    expect(monthFunc(3)).toBe("March");
   });
-  test("wednesday", () => {
-    expect(dayOfWeekFunc(3)).toBe("Wednesday");
+  test("April", () => {
+    expect(monthFunc(4)).toBe("April");
   });
-  test("thursday", () => {
-    expect(dayOfWeekFunc(4)).toBe("Thursday");
+  test("May", () => {
+    expect(monthFunc(5)).toBe("May");
   });
-  test("friday", () => {
-    expect(dayOfWeekFunc(5)).toBe("Friday");
+  test("June", () => {
+    expect(monthFunc(6)).toBe("June");
   });
-  test("saturday", () => {
-    expect(dayOfWeekFunc(6)).toBe("Saturday");
+  test("July", () => {
+    expect(monthFunc(7)).toBe("July");
+  });
+  test("August", () => {
+    expect(monthFunc(8)).toBe("August");
+  });
+  test("September", () => {
+    expect(monthFunc(9)).toBe("September");
+  });
+  test("October", () => {
+    expect(monthFunc(10)).toBe("October");
+  });
+  test("November", () => {
+    expect(monthFunc(11)).toBe("November");
+  });
+  test("December", () => {
+    expect(monthFunc(12)).toBe("December");
   });
   test("incorrect value", () => {
-    expect(dayOfWeekFunc(7)).toBe("");
+    expect(monthFunc(13)).toBe("");
   });
 });
 

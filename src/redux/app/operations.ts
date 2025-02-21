@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-const quoteBASE_URL: string = "https://api.quotable.io/";
+const quoteBASE_URL: string = "http://api.quotable.io/";
 
 export const fetchQuote = createAsyncThunk(
   "fetchQuote",

@@ -5,7 +5,7 @@ import { fetchQuote } from "../redux/app/operations";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchLocation, fetchTime } from "../redux/clock/operations";
 import { isDaySwitcher } from "../redux/app/appSlice";
-import { selectTime } from "../redux/clock/selectors";
+import { selectLocation, selectTime } from "../redux/clock/selectors";
 import { timeFunc } from "../utils/timeFunc";
 import { ThreeDots } from "react-loader-spinner";
 import { isDayFunc } from "../utils/isDayFunc";
@@ -16,17 +16,19 @@ const App: FC = () => {
   const { time }: { time: string } = useAppSelector(selectTime);
   const isDay: boolean = useAppSelector(selectIsDay);
   const isDayCheck: boolean = useMemo(() => isDayFunc(time), [time]);
+ const { ipAddress }: { ipAddress: string} =
+      useAppSelector(selectLocation);
 
   useEffect(() => {
     dispatch(fetchLocation());
     dispatch(isDaySwitcher(isDayCheck));
-     dispatch(fetchTime());
+    if(ipAddress){
     setInterval(() => {
-      dispatch(fetchTime());
+      dispatch(fetchTime(ipAddress));
     }, 1000);
-
+    }
     dispatch(fetchQuote());
-  }, [dispatch, isDayCheck]);
+  }, [dispatch, isDayCheck, ipAddress]);
 
   return (
     <>

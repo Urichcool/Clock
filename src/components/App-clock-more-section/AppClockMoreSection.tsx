@@ -7,14 +7,14 @@ const AppClockMoreSection: FC = () => {
   const isMoreOpen: boolean = useAppSelector(selectMoreSwitcher);
   const {
     timeZone,
-    dayOfWeek,
-    dayOfYear,
-    weekNumber,
+    day,
+    month,
+    year
   }: {
     timeZone: string;
-    dayOfWeek: string;
-    dayOfYear: number;
-    weekNumber: number;
+    day: number;
+    month: string;
+    year: number
   } = useAppSelector(selectTime);
   const isDay: boolean = useAppSelector(selectIsDay);
   return (
@@ -42,8 +42,8 @@ const AppClockMoreSection: FC = () => {
               <p className="more-section-text">{timeZone}</p>
             </li>
             <li className="more-section-item">
-              <p className="more-section-heading-text">day of the year</p>
-              <p className="more-section-text">{dayOfYear}</p>
+              <p className="more-section-heading-text">year</p>
+              <p className="more-section-text">{year}</p>
             </li>
           </ul>
           <ul
@@ -54,12 +54,12 @@ const AppClockMoreSection: FC = () => {
             }
           >
             <li className="more-section-item">
-              <p className="more-section-heading-text">day of the week</p>
-              <p className="more-section-text">{dayOfWeek}</p>
+              <p className="more-section-heading-text">Month</p>
+              <p className="more-section-text">{month}</p>
             </li>
             <li className="more-section-item">
-              <p className="more-section-heading-text">week number</p>
-              <p className="more-section-text">{weekNumber}</p>
+              <p className="more-section-heading-text">day</p>
+              <p className="more-section-text">{day}</p>
             </li>
           </ul>
         </div>

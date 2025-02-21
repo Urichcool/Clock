@@ -5,15 +5,15 @@ interface clockState {
   isDay: boolean;
   time: {
     time: string;
-    abbreviation: string;
     timeZone: string;
-    dayOfWeek: string;
-    dayOfYear: number;
-    weekNumber: number;
+    month: string;
+    day: number;
+    year:number
   };
   location: {
     country: string;
     city: string;
+    ipAddress: string;
   };
 }
 
@@ -21,15 +21,15 @@ const initialState: clockState = {
   isDay: false,
   time: {
     time: "",
-    abbreviation: "",
     timeZone: "",
-    dayOfWeek: "",
-    dayOfYear: 0,
-    weekNumber: 0,
+    month: "",
+    day: 0,
+    year:0,
   },
   location: {
     country: "",
     city: "",
+    ipAddress: "",
   },
 };
 
@@ -46,8 +46,5 @@ export const clockSlice = createSlice({
         state.location = action.payload;
       }),
 });
-
-
-
 
 export const clockReducer = clockSlice.reducer;
